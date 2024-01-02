@@ -1,140 +1,2076 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="UTF-8">
+    <title>EPF Ecole d'ingénieure</title>
 
-        <title>Laravel</title>
+    <!-- responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- For IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
+        rel="stylesheet">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset("assets/css/animate.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/aos.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/bootstrap-select.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/custom-animate.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/fancybox.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/flaticon.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/font-awesome.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/imp.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/jquery-ui.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/magnific-popup.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/owl.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/rtl.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/scrollbar.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/icomoon.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/jquery.bootstrap-touchspin.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/nice-select.css") }}">
 
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, sans-serif;font-feature-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::-webkit-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.relative{position:relative}.mx-auto{margin-left:auto;margin-right:auto}.mx-6{margin-left:1.5rem;margin-right:1.5rem}.ml-4{margin-left:1rem}.mt-16{margin-top:4rem}.mt-6{margin-top:1.5rem}.mt-4{margin-top:1rem}.-mt-px{margin-top:-1px}.mr-1{margin-right:0.25rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-16{height:4rem}.h-7{height:1.75rem}.h-6{height:1.5rem}.h-5{height:1.25rem}.min-h-screen{min-height:100vh}.w-auto{width:auto}.w-16{width:4rem}.w-7{width:1.75rem}.w-6{width:1.5rem}.w-5{width:1.25rem}.max-w-7xl{max-width:80rem}.shrink-0{flex-shrink:0}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}.gap-4{gap:1rem}.self-center{align-self:center}.rounded-lg{border-radius:0.5rem}.rounded-full{border-radius:9999px}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity))}.bg-dots-darker{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E")}.from-gray-700\/50{--tw-gradient-from:rgb(55 65 81 / 0.5);--tw-gradient-to:rgb(55 65 81 / 0);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0);--tw-gradient-stops:var(--tw-gradient-from), transparent, var(--tw-gradient-to)}.bg-center{background-position:center}.stroke-red-500{stroke:#ef4444}.stroke-gray-400{stroke:#9ca3af}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-gray-500\/20{--tw-shadow-color:rgb(107 114 128 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-red-500 *::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-red-500::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity))}.focus\:rounded-sm:focus{border-radius:0.125rem}.focus\:outline:focus{outline-style:solid}.focus\:outline-2:focus{outline-width:2px}.focus\:outline-red-500:focus{outline-color:#ef4444}.group:hover .group-hover\:stroke-gray-600{stroke:#4b5563}@media (prefers-reduced-motion: no-preference){.motion-safe\:hover\:scale-\[1\.01\]:hover{--tw-scale-x:1.01;--tw-scale-y:1.01;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}@media (prefers-color-scheme: dark){.dark\:bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:bg-gray-800\/50{background-color:rgb(31 41 55 / 0.5)}.dark\:bg-red-800\/20{background-color:rgb(153 27 27 / 0.2)}.dark\:bg-dots-lighter{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E")}.dark\:bg-gradient-to-bl{background-image:linear-gradient(to bottom left, var(--tw-gradient-stops))}.dark\:stroke-gray-600{stroke:#4b5563}.dark\:text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:shadow-none{--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.dark\:ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.dark\:ring-inset{--tw-ring-inset:inset}.dark\:ring-white\/5{--tw-ring-color:rgb(255 255 255 / 0.05)}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.group:hover .dark\:group-hover\:stroke-gray-400{stroke:#9ca3af}}@media (min-width: 640px){.sm\:fixed{position:fixed}.sm\:top-0{top:0px}.sm\:right-0{right:0px}.sm\:ml-0{margin-left:0px}.sm\:flex{display:flex}.sm\:items-center{align-items:center}.sm\:justify-center{justify-content:center}.sm\:justify-between{justify-content:space-between}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:gap-8{gap:2rem}.lg\:p-8{padding:2rem}}
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+    <!-- Module css -->
+    <link rel="stylesheet" href="{{ asset("assets/css/module-css/header-section.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/module-css/banner-section.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/module-css/about-section.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/module-css/blog-section.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/module-css/fact-counter-section.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/module-css/faq-section.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/module-css/contact-page.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/module-css/breadcrumb-section.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/module-css/team-section.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/module-css/partner-section.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/module-css/testimonial-section.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/module-css/services-section.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/module-css/footer-section.css") }}">
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+    <link href="{{ asset("assets/css/color/theme-color.css") }}" id="jssDefault" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset("assets/css/style.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/color-1.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/css/responsive.css") }}">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset("assets/images/favicon/apple-touch-icon.png") }}">
+    <link rel="icon" type="image/png" href="{{ asset("assets/images/favicon/favicon-32x32.png") }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ asset("assets/images/favicon/favicon-16x16.png") }}" sizes="16x16">
 
-            <div class="max-w-7xl mx-auto p-6 lg:p-8">
-                <div class="flex justify-center">
-                    <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
-                        <path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="#FF2D20"/>
-                    </svg>
-                </div>
+    <!-- Fixing Internet Explorer-->
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="{{ asset("assets/js/html5shiv.js") }}"></script>
+    <![endif]-->
 
-                <div class="mt-16">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                        <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                    </svg>
-                                </div>
+</head>
 
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Documentation</h2>
+<body>
 
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </p>
+<div class="boxed_wrapper ltr">
+
+    <!-- Preloader -->
+    <div class="loader-wrap">
+        <div class="preloader">
+            <div class="preloader-close">Preloader Close</div>
+        </div>
+        <div class="layer layer-one"><span class="overlay"></span></div>
+        <div class="layer layer-two"><span class="overlay"></span></div>
+        <div class="layer layer-three"><span class="overlay"></span></div>
+    </div>
+
+    <!-- page-direction -->
+    <div class="page_direction">
+        <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
+        <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
+    </div>
+    <!-- page-direction end -->
+
+
+    <!-- switcher menu -->
+    <div class="switcher" style="display: none;">
+        <div class="switch_btn">
+            <button><img src="assets/images/icon/color-palette.png" alt="Color Palette"> </button>
+        </div>
+        <div class="switch_menu">
+            <!-- color changer -->
+            <div class="switcher_container">
+                <ul id="styleOptions" title="switch styling">
+                    <li>
+                        <a href="javascript: void(0)" data-theme="blue" class="blue-color"></a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0)" data-theme="pink" class="pink-color"></a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0)" data-theme="violet" class="violet-color"></a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0)" data-theme="crimson" class="crimson-color"></a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0)" data-theme="orange" class="orange-color"></a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0)" data-theme="green" class="green-color"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- end switcher menu -->
+
+
+    <!-- Main header-->
+    <header class="main-header header-style-two">
+
+        <!--Start Header Top-->
+        <div class="header-top-style2">
+            <div class="pattern-bg" style="background-image: url(assets/images/pattern/thm-pattern-8.png);"></div>
+            <div class="auto-container">
+                <div class="outer-box">
+
+                    <div class="header-top-style2__left">
+                        <div class="top-menu">
+                            <ul>
+                                <li><a href="faq.html">Faq’s</a></li>
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="blog.html">News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-top-style2__middle">
+                        <div class="welcome-text welcome-text--style">
+                            <p>Welcome!... Proof Of Quality Is On The Roof.</p>
+                        </div>
+                    </div>
+
+                    <div class="header-top-style2__right">
+                        <div class="header-social-link header-social-link--style2">
+                            <div class="inner-title">
+                                <h4>Follow On:</h4>
                             </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laracasts.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laracasts</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laravel-news.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laravel News</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Forge</a>, <a href="https://vapor.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Vapor</a>, <a href="https://nova.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Nova</a>, and <a href="https://envoyer.io" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Telescope</a>, and more.
-                                </p>
+                            <div class="social-link">
+                                <ul class="clearfix">
+                                    <li>
+                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-left">
-                        <div class="flex items-center gap-4">
-                            <a href="https://github.com/sponsors/taylorotwell" class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="-mt-px mr-1 w-5 h-5 stroke-gray-400 dark:stroke-gray-600 group-hover:stroke-gray-600 dark:group-hover:stroke-gray-400">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                </svg>
-                                Sponsor
-                            </a>
+                </div>
+            </div>
+        </div>
+        <!--End Header Top-->
+
+        <!--Start Header-->
+        <div class="header-style2">
+            <div class="auto-container">
+                <div class="outer-box">
+
+                    <div class="header-style2__left">
+                        <div class="bg-color"></div>
+                        <div class="main-logo-box-2">
+                            <a href="index.html"><img src="assets/images/resources/3.png" style="width: 190px;height:85px" alt="Awesome Logo"
+                                                      title=""></a>
                         </div>
                     </div>
 
-                    <div class="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                    <div class="header-style2__right">
+
+                        <div class="header-contact-info-style2 text-right-rtl">
+                            <ul>
+                                <li>
+                                    <div class="inner">
+                                        <div class="icon">
+                                            <span class="flaticon-placeholder-1"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>Company Location</p>
+                                            <h4>191 Integer Rd, LA 08219</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="inner">
+                                        <div class="icon">
+                                            <span class="flaticon-call"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>Make a Call</p>
+                                            <h4><a href="tel:123456789">(+233) 456 789 01</a></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="quote-button-box">
+                            <a href="#"><img src="assets/images/icon/quote.png" alt=""></a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--End header-->
+
+        <!--Start Header Bottom-->
+        <div class="header-bottom">
+            <div class="auto-container">
+                <div class="outer-box">
+
+                    <div class="header-bottom__left">
+                        <div class="nav-outer style2 clearfix">
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler">
+                                <div class="inner">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </div>
+                            </div>
+                            <!-- Main Menu -->
+                            <nav class="main-menu style2 navbar-expand-md navbar-light">
+                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix">
+                                        <li class="dropdown current"><a href="#">Home</a>
+                                            <ul>
+                                                <li><a href="index.html">Home Page 01</a></li>
+                                                <li><a href="index-2.html">Home Page 02</a></li>
+                                                <li><a href="index-3.html">Home Page 03</a></li>
+                                                <li><a href="index-onepage.html">Home OnePage</a></li>
+                                                <li class="dropdown"><a href="#">Header Styles</a>
+                                                    <ul>
+                                                        <li><a href="index.html">Header Style One</a></li>
+                                                        <li><a href="index-2.html">Header Style Two</a></li>
+                                                        <li><a href="index-3.html">Header Style Three</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Company</a>
+                                            <ul>
+                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="team.html">Meet Our Team</a></li>
+                                                <li class="dropdown"><a href="#">Projects</a>
+                                                    <ul>
+                                                        <li><a href="projects.html">2 Columns Grid</a></li>
+                                                        <li><a href="projects-2.html">3 Columns Grid</a>
+                                                        <li><a href="projects-3.html">3 Columns With
+                                                                Title</a>
+                                                        <li><a href="projects-4.html">4 Columns Wide</a>
+                                                        <li><a href="projects-5.html">Masonry View</a>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="faq.html">FAQ’s</a></li>
+                                                <li><a href="coming-soon.html">Coming soon</a></li>
+                                                <li><a href="testimonials.html">Testimonials</a></li>
+                                                <li><a href="error.html">404 Error page</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Services</a>
+                                            <ul>
+                                                <li><a href="services.html">Our Services</a></li>
+                                                <li><a href="service-details.html">Service Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Blog</a>
+                                            <ul>
+                                                <li><a href="blog.html">Grid View</a></li>
+                                                <li><a href="blog-2.html">List View</a></li>
+                                                <li><a href="blog-3.html">Large Image</a></li>
+                                                <li><a href="blog-single.html">Single Post</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Shop</a>
+                                            <ul>
+                                                <li><a href="shop.html">Products</a></li>
+                                                <li><a href="shop-details.html">Product Details</a></li>
+                                                <li><a href="cart.html">Shopping Cart</a></li>
+                                                <li><a href="checkout.html">Checkout</a></li>
+                                                <li><a href="account.html">My Account</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                            <!-- Main Menu End-->
+                        </div>
+                    </div>
+
+                    <div class="header-bottom__right">
+                        <div class="shopping-cart-box">
+                            <a href="shop.html"><i class="flaticon-shopping-bag"></i><span
+                                    class="count">3</span></a>
+                        </div>
+                        <div class="space-box1"></div>
+                        <div class="serach-button-style2 serach-button-style2--instyle2">
+                            <input type="search" class="form-control" name="search-input" value=""
+                                   placeholder="Search..." required>
+                            <button type="button"><i class="icon-search"></i></button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!--End Header Bottom-->
+
+
+
+        <!--Sticky Header-->
+        <div class="sticky-header">
+            <div class="container">
+                <div class="clearfix">
+                    <!--Logo-->
+                    <div class="logo float-left">
+                        <a href="index.html" class="img-responsive"><img
+                                src="assets/images/resources/sticky-logo.png" alt="" title=""></a>
+                    </div>
+                    <!--Right Col-->
+                    <div class="right-col float-right">
+                        <!-- Main Menu -->
+                        <nav class="main-menu clearfix">
+                            <!--Keep This Empty / Menu will come through Javascript-->
+                        </nav>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+        <!--End Sticky Header-->
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon fa fa-times-circle"></span></div>
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="index.html"><img src="assets/images/resources/mobilemenu-logo.png"
+                                                                alt="" title=""></a></div>
+                <div class="menu-outer">
+                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                </div>
+                <!--Social Links-->
+                <div class="social-links">
+                    <ul class="clearfix">
+                        <li><a href="#"><span class="fab fa fa-facebook-square"></span></a></li>
+                        <li><a href="#"><span class="fab fa fa-twitter-square"></span></a></li>
+                        <li><a href="#"><span class="fab fa fa-pinterest-square"></span></a></li>
+                        <li><a href="#"><span class="fab fa fa-google-plus-square"></span></a></li>
+                        <li><a href="#"><span class="fab fa fa-youtube-square"></span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End Mobile Menu -->
+    </header>
+
+
+    <!-- Start Main Slider -->
+    <section class="main-slider style2">
+        <div class="slider-box">
+            <!-- Banner Carousel -->
+            <div class="banner-carousel owl-theme owl-carousel">
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="image-layer" style="background-image:url(assets/images/slides/slide-v2-1.jpg)">
+                    </div>
+                    <div class="auto-container">
+                        <div class="content">
+                            <div class="sub-title">
+                                <div class="border-box"></div>
+                                <h6>Thinking On Top</h6>
+                            </div>
+                            <div class="big-title">
+                                <h2>Reputable.<br> Reliable. Results.</h2>
+                            </div>
+                            <div class="text">
+                                <p>With More than four decades of proven success in roofing.</p>
+                            </div>
+                            <div class="btns-box">
+                                <a class="btn-one" href="about.html">
+                                    <span class="txt">Read More</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="image-layer" style="background-image:url(assets/images/slides/slide-v2-2.jpg)">
+                    </div>
+                    <div class="auto-container">
+                        <div class="content">
+                            <div class="sub-title">
+                                <div class="border-box"></div>
+                                <h6>For the roof lovers</h6>
+                            </div>
+                            <div class="big-title">
+                                <h2>Different<br> & Unique Work</h2>
+                            </div>
+                            <div class="text">
+                                <p>With More than four decades of proven success in roofing.</p>
+                            </div>
+                            <div class="btns-box">
+                                <a class="btn-one" href="about.html">
+                                    <span class="txt">Read More</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="image-layer" style="background-image:url(assets/images/slides/slide-v2-3.jpg)">
+                    </div>
+                    <div class="auto-container">
+                        <div class="content">
+                            <div class="sub-title">
+                                <div class="border-box"></div>
+                                <h6>Protect your investment</h6>
+                            </div>
+                            <div class="big-title">
+                                <h2>Plan Your<br> Roofing Project</h2>
+                            </div>
+                            <div class="text">
+                                <p>With More than four decades of proven success in roofing.</p>
+                            </div>
+                            <div class="btns-box">
+                                <a class="btn-one" href="about.html">
+                                    <span class="txt">Read More</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Main Slider -->
+
+    <!--Start About Style2 Area-->
+    <section class="about-style2-area">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xl-6">
+                    <div class="about-style2__content">
+                        <div class="sec-title">
+                            <div class="sub-title">
+                                <h6><span class="border-left"></span>About Company</h6>
+                            </div>
+                            <h2>Professional<br> Roofing Contractor</h2>
+                        </div>
+                        <div class="inner-content">
+                            <div class="text">
+                                <p>Simple and easy too distinguish in a freek hours when our power choice is
+                                    untrammelled and when nothing prevent our being.</p>
+                            </div>
+                            <h5>Put The Best Roof Over Your Head.</h5>
+                            <ul>
+                                <li>
+                                    <div class="icon">
+                                        <span class="flaticon-quality"></span>
+                                    </div>
+                                    <div class="inner-text">
+                                        <h3>Certified</h3>
+                                        <p>Protecting Your Home From Damaging Leaks.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="flaticon-settings"></span>
+                                    </div>
+                                    <div class="inner-text">
+                                        <h3>Innovative Work</h3>
+                                        <p>The Roofing Company By Which All Others Are Measured.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="flaticon-home-repair"></span>
+                                    </div>
+                                    <div class="inner-text">
+                                        <h3>Experienced</h3>
+                                        <p>Roofing Is Our Heritage, Quality Is Our Tradition.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="authorised-person-info">
+                                <div class="signature">
+                                    <img src="assets/images/resources/signature.png" alt="">
+                                </div>
+                                <div class="name">
+                                    <h3>Benjamin Everett.</h3>
+                                    <span>CEO & Founder</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-6">
+                    <div class="about-style2__image-box">
+                        <div class="big-title paroller">rufers</div>
+                        <div class="img-box1 js-tilt">
+                            <img src="assets/images/about/about-style2-img-1.jpg" alt="">
+                        </div>
+                        <div class="img-box2">
+                            <div class="inner">
+                                <img src="assets/images/about/about-style2-img-2.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="overlay-box">
+                            <h2>12<span class="flaticon-plus-1"></span></h2>
+                            <h3>Years of<br> Experienced</h3>
+                        </div>
+
+                        <div class="icon-box">
+                            <span class="flaticon-house-with-wooden-roof"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--End About Style2 Area-->
+
+    <!--Start Fact Counter Area-->
+    <section class="fact-counter-area">
+        <div class="fact-counter-area_bg"
+             style="background-image: url(assets/images/parallax-background/fact-counter-area-bg.jpg);"></div>
+        <div class="container">
+            <div class="sec-title center text-center">
+                <div class="sub-title">
+                    <h6><span class="border-left"></span> Interesting Numbers <span class="border-right"></span>
+                    </h6>
+                </div>
+                <h2>Fun Facts By The Numbers</h2>
+            </div>
+            <div class="row">
+                <!--Start Single Fact Counter-->
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="single-fact-counter text-center wow slideInUp" data-wow-delay="00ms"
+                         data-wow-duration="1500ms">
+                        <div class="inner">
+                            <div class="pattern-bg"
+                                 style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                            <div class="icon">
+                                <span class="flaticon-roof-3"></span>
+                            </div>
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="3000" data-stop="2.5">0</span>
+                                <span class="k">k</span>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h3>Projects Completed</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single Fact Counter-->
+                <!--Start Single Fact Counter-->
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="single-fact-counter text-center wow slideInUp" data-wow-delay="100ms"
+                         data-wow-duration="1500ms">
+                        <div class="inner">
+                            <div class="pattern-bg"
+                                 style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                            <div class="icon">
+                                <span class="flaticon-worker"></span>
+                            </div>
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="3000" data-stop="84">0</span>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h3>Expert Workers</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single Fact Counter-->
+                <!--Start Single Fact Counter-->
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="single-fact-counter text-center wow slideInUp" data-wow-delay="200ms"
+                         data-wow-duration="1500ms">
+                        <div class="inner">
+                            <div class="pattern-bg"
+                                 style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                            <div class="icon">
+                                <span class="flaticon-award"></span>
+                            </div>
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="3000" data-stop="06">0</span>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h3>Awards Recieved</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single Fact Counter-->
+                <!--Start Single Fact Counter-->
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="single-fact-counter text-center wow slideInUp" data-wow-delay="300ms"
+                         data-wow-duration="1500ms">
+                        <div class="inner">
+                            <div class="pattern-bg"
+                                 style="background-image: url(assets/images/pattern/thm-pattern-3.png);"></div>
+                            <div class="icon">
+                                <span class="flaticon-happy"></span>
+                            </div>
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="3000" data-stop="99">0</span>
+                                <span class="k">%</span>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h3>Happy Customers</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single Fact Counter-->
+            </div>
+        </div>
+    </section>
+    <!--End Fact Counter Area-->
+
+    <!--Start Service Style2 Area-->
+    <section class="service-style2-area">
+        <div class="container">
+            <div class="service-style2__top-title">
+                <div class="sec-title">
+                    <div class="sub-title">
+                        <h6><span class="border-left"></span>Our Services</h6>
+                    </div>
+                    <h2>Superior Roofing Services</h2>
+                </div>
+                <div class="btn-box">
+                    <a class="btn-one" href="services.html">
+                        <span class="txt">All Services</span>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="theme_carousel service-style2-carousel owl-dot-style1 owl-theme owl-carousel"
+                         data-options='{"loop": true, "margin": 30, "autoheight":true, "lazyload":true, "nav": false, "dots": true, "autoplay": true, "autoplayTimeout": 6000, "smartSpeed": 300, "responsive":{ "0" :{ "items": "1" }, "600" :{ "items" : "1" }, "768" :{ "items" : "1" } , "992":{ "items" : "2" }, "1200":{ "items" : "3" }}}'>
+                        <!--Start Single Service Style2-->
+                        <div class="single-service-style2 wow fadeInUp" data-wow-delay="00ms"
+                             data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="img-holder">
+                                    <img src="assets/images/services/service-v1-1.jpg" alt="">
+                                </div>
+                                <div class="title-holder clearfix">
+                                    <div class="inner-text">
+                                        <h3><a href="services-details.html">Single Ply Roofing</a></h3>
+                                        <p>Except too obtains some our advantages us ever...</p>
+                                    </div>
+                                    <div class="icon">
+                                        <div class="pattern-bg"
+                                             style="background-image: url(assets/images/pattern/thm-pattern-1.png);">
+                                        </div>
+                                        <span class="flaticon-roof"></span>
+                                        <div class="overlay">
+                                            <a href="services-details.html"><i class="fa fa-angle-right"
+                                                                               aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single Service Style2-->
+                        <!--Start Single Service Style2-->
+                        <div class="single-service-style2 wow fadeInUp" data-wow-delay="00ms"
+                             data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="img-holder">
+                                    <img src="assets/images/services/service-v1-2.jpg" alt="">
+                                </div>
+                                <div class="title-holder clearfix">
+                                    <div class="inner-text">
+                                        <h3><a href="services-details.html">Modified Roofing</a></h3>
+                                        <p>Know how to pursue pleasure rationally encounter...</p>
+                                    </div>
+                                    <div class="icon">
+                                        <div class="pattern-bg"
+                                             style="background-image: url(assets/images/pattern/thm-pattern-1.png);">
+                                        </div>
+                                        <span class="flaticon-roof-1"></span>
+                                        <div class="overlay">
+                                            <a href="services-details.html"><i class="fa fa-angle-right"
+                                                                               aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single Service Style2-->
+                        <!--Start Single Service Style2-->
+                        <div class="single-service-style2 wow fadeInUp" data-wow-delay="00ms"
+                             data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="img-holder">
+                                    <img src="assets/images/services/service-v1-3.jpg" alt="">
+                                </div>
+                                <div class="title-holder clearfix">
+                                    <div class="inner-text">
+                                        <h3><a href="services-details.html">Built-Up Roofing</a></h3>
+                                        <p>Right to find fault with a man who chooses to enjoy...</p>
+                                    </div>
+                                    <div class="icon">
+                                        <div class="pattern-bg"
+                                             style="background-image: url(assets/images/pattern/thm-pattern-1.png);">
+                                        </div>
+                                        <span class="flaticon-roof-2"></span>
+                                        <div class="overlay">
+                                            <a href="services-details.html"><i class="fa fa-angle-right"
+                                                                               aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single Service Style2-->
+
+                        <!--Start Single Service Style2-->
+                        <div class="single-service-style2 wow fadeInUp" data-wow-delay="00ms"
+                             data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="img-holder">
+                                    <img src="assets/images/services/service-v1-1.jpg" alt="">
+                                </div>
+                                <div class="title-holder clearfix">
+                                    <div class="inner-text">
+                                        <h3><a href="services-details.html">Single Ply Roofing</a></h3>
+                                        <p>Except too obtains some our advantages us ever...</p>
+                                    </div>
+                                    <div class="icon">
+                                        <div class="pattern-bg"
+                                             style="background-image: url(assets/images/pattern/thm-pattern-1.png);">
+                                        </div>
+                                        <span class="flaticon-roof"></span>
+                                        <div class="overlay">
+                                            <a href="services-details.html"><i class="fa fa-angle-right"
+                                                                               aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single Service Style2-->
+                        <!--Start Single Service Style2-->
+                        <div class="single-service-style2 wow fadeInUp" data-wow-delay="00ms"
+                             data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="img-holder">
+                                    <img src="assets/images/services/service-v1-2.jpg" alt="">
+                                </div>
+                                <div class="title-holder clearfix">
+                                    <div class="inner-text">
+                                        <h3><a href="services-details.html">Modified Roofing</a></h3>
+                                        <p>Know how to pursue pleasure rationally encounter...</p>
+                                    </div>
+                                    <div class="icon">
+                                        <div class="pattern-bg"
+                                             style="background-image: url(assets/images/pattern/thm-pattern-1.png);">
+                                        </div>
+                                        <span class="flaticon-roof-1"></span>
+                                        <div class="overlay">
+                                            <a href="services-details.html"><i class="fa fa-angle-right"
+                                                                               aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single Service Style2-->
+                        <!--Start Single Service Style2-->
+                        <div class="single-service-style2 wow fadeInUp" data-wow-delay="00ms"
+                             data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="img-holder">
+                                    <img src="assets/images/services/service-v1-3.jpg" alt="">
+                                </div>
+                                <div class="title-holder clearfix">
+                                    <div class="inner-text">
+                                        <h3><a href="services-details.html">Built-Up Roofing</a></h3>
+                                        <p>Right to find fault with a man who chooses to enjoy...</p>
+                                    </div>
+                                    <div class="icon">
+                                        <div class="pattern-bg"
+                                             style="background-image: url(assets/images/pattern/thm-pattern-1.png);">
+                                        </div>
+                                        <span class="flaticon-roof-2"></span>
+                                        <div class="overlay">
+                                            <a href="services-details.html"><i class="fa fa-angle-right"
+                                                                               aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single Service Style2-->
+
+                        <!--Start Single Service Style2-->
+                        <div class="single-service-style2 wow fadeInUp" data-wow-delay="00ms"
+                             data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="img-holder">
+                                    <img src="assets/images/services/service-v1-1.jpg" alt="">
+                                </div>
+                                <div class="title-holder clearfix">
+                                    <div class="inner-text">
+                                        <h3><a href="services-details.html">Single Ply Roofing</a></h3>
+                                        <p>Except too obtains some our advantages us ever...</p>
+                                    </div>
+                                    <div class="icon">
+                                        <div class="pattern-bg"
+                                             style="background-image: url(assets/images/pattern/thm-pattern-1.png);">
+                                        </div>
+                                        <span class="flaticon-roof"></span>
+                                        <div class="overlay">
+                                            <a href="services-details.html"><i class="fa fa-angle-right"
+                                                                               aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single Service Style2-->
+                        <!--Start Single Service Style2-->
+                        <div class="single-service-style2 wow fadeInUp" data-wow-delay="00ms"
+                             data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="img-holder">
+                                    <img src="assets/images/services/service-v1-2.jpg" alt="">
+                                </div>
+                                <div class="title-holder clearfix">
+                                    <div class="inner-text">
+                                        <h3><a href="services-details.html">Modified Roofing</a></h3>
+                                        <p>Know how to pursue pleasure rationally encounter...</p>
+                                    </div>
+                                    <div class="icon">
+                                        <div class="pattern-bg"
+                                             style="background-image: url(assets/images/pattern/thm-pattern-1.png);">
+                                        </div>
+                                        <span class="flaticon-roof-1"></span>
+                                        <div class="overlay">
+                                            <a href="services-details.html"><i class="fa fa-angle-right"
+                                                                               aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single Service Style2-->
+                        <!--Start Single Service Style2-->
+                        <div class="single-service-style2 wow fadeInUp" data-wow-delay="00ms"
+                             data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="img-holder">
+                                    <img src="assets/images/services/service-v1-3.jpg" alt="">
+                                </div>
+                                <div class="title-holder clearfix">
+                                    <div class="inner-text">
+                                        <h3><a href="services-details.html">Built-Up Roofing</a></h3>
+                                        <p>Right to find fault with a man who chooses to enjoy...</p>
+                                    </div>
+                                    <div class="icon">
+                                        <div class="pattern-bg"
+                                             style="background-image: url(assets/images/pattern/thm-pattern-1.png);">
+                                        </div>
+                                        <span class="flaticon-roof-2"></span>
+                                        <div class="overlay">
+                                            <a href="services-details.html"><i class="fa fa-angle-right"
+                                                                               aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single Service Style2-->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--End Service Style2 Area-->
+
+    <!--Start Choose Style1 Area-->
+    <section class="choose-style1-area">
+        <div class="choose-style1-area-bg"
+             style="background-image: url(assets/images/parallax-background/choose-style1-area-bg.jpg);">
+        </div>
+        <div class="pattern-bg wow slideInRight" data-wow-delay="300ms" data-wow-duration="3500ms"
+             style="background-image: url(assets/images/pattern/thm-pattern-9.png);">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+
+                    <div class="choose-style1__content">
+                        <div class="choose-style1__content-bg wow slideInUp" data-wow-delay="300ms"
+                             data-wow-duration="5000ms"
+                             style="background-image: url(assets/images/resources/choose-style1__content-bg.jpg);">
+                        </div>
+                        <div class="border-left-box"></div>
+                        <div class="sec-title">
+                            <div class="sub-title">
+                                <h6><span class="border-left"></span>Why Choose Us</h6>
+                            </div>
+                            <h2>We’re Dedicated to<br> Providing Quality Service</h2>
+                        </div>
+                        <div class="inner-content">
+                            <div class="text">
+                                <p>These cases are perfectly simple and easy to distinguish. In a free hour when our
+                                    power<br> of choice is untrammelled and when nothing prevents.</p>
+                            </div>
+                            <ul class="clearfix">
+                                <li>
+                                    <div class="icon">
+                                        <span class="flaticon-protection"></span>
+                                    </div>
+                                    <div class="inner-title">
+                                        <h3>Reliability</h3>
+                                        <p>Transparency Service</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="flaticon-quality"></span>
+                                    </div>
+                                    <div class="inner-title">
+                                        <h3>Materials</h3>
+                                        <p>100% Quality Product</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="flaticon-construction-and-tools"></span>
+                                    </div>
+                                    <div class="inner-title">
+                                        <h3>Expert Staff</h3>
+                                        <p>Trained & Expereinced</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="flaticon-certificate"></span>
+                                    </div>
+                                    <div class="inner-title">
+                                        <h3>Accredited</h3>
+                                        <p>Certified Company</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Choose Style1 Area-->
+
+    <!--Start Project Style2 Area-->
+    <section class="project-style1-area pdb120">
+        <div class="container">
+            <div class="project-top-title style2">
+                <div class="sec-title">
+                    <div class="sub-title">
+                        <h6><span class="border-left"></span>Work Gallery</h6>
+                    </div>
+                    <h2>Our Latest Projects</h2>
+                </div>
+                <div class="project-menu-box wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1500ms">
+                    <ul class="project-filter clearfix post-filter has-dynamic-filters-counter">
+                        <li data-filter=".filter-item" class="active"><span class="filter-text">View All</span></li>
+                        <li data-filter=".commercial"><span class="filter-text">Commercial</span></li>
+                        <li data-filter=".residential"><span class="filter-text">Residential</span></li>
+                        <li data-filter=".industrial"><span class="filter-text">Industrial</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row filter-layout masonary-layout text-right-rtl">
+
+                <!--Start Single project Item-->
+                <div class="col-xl-4 col-lg-6 col-md-6 filter-item commercial industrial">
+                    <div class="single-project-item style2">
+                        <div class="img-holder">
+                            <div class="inner">
+                                <img src="assets/images/portfolio/project-v2-1.jpg" alt="Awesome Image">
+                            </div>
+                            <div class="overlay-content text-center">
+                                <p>Commercial</p>
+                                <h3><a href="#">Roof Installation</a></h3>
+                                <div class="border-box"></div>
+                                <ul>
+                                    <li>
+                                        <a class="lightbox-image" data-fancybox="gallery"
+                                           href="assets/images/portfolio/project-v2-1.jpg">
+                                            <i class="flaticon-zoom"></i>
+                                        </a>
+                                    </li>
+                                    <li><a href="#"><span class="flaticon-plus-1"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single project Item-->
+                <!--Start Single project Item-->
+                <div class="col-xl-4 col-lg-6 col-md-6 filter-item commercial residential">
+                    <div class="single-project-item style2">
+                        <div class="img-holder">
+                            <div class="inner">
+                                <img src="assets/images/portfolio/project-v2-2.jpg" alt="Awesome Image">
+                            </div>
+                            <div class="overlay-content text-center">
+                                <p>Commercial</p>
+                                <h3><a href="#">Roof Installation</a></h3>
+                                <div class="border-box"></div>
+                                <ul>
+                                    <li>
+                                        <a class="lightbox-image" data-fancybox="gallery"
+                                           href="assets/images/portfolio/project-v2-2.jpg">
+                                            <i class="flaticon-zoom"></i>
+                                        </a>
+                                    </li>
+                                    <li><a href="#"><span class="flaticon-plus-1"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single project Item-->
+                <!--Start Single project Item-->
+                <div class="col-xl-4 col-lg-6 col-md-6 filter-item commercial industrial">
+                    <div class="single-project-item style2">
+                        <div class="img-holder">
+                            <div class="inner">
+                                <img src="assets/images/portfolio/project-v2-3.jpg" alt="Awesome Image">
+                            </div>
+                            <div class="overlay-content text-center">
+                                <p>Commercial</p>
+                                <h3><a href="#">Roof Installation</a></h3>
+                                <div class="border-box"></div>
+                                <ul>
+                                    <li>
+                                        <a class="lightbox-image" data-fancybox="gallery"
+                                           href="assets/images/portfolio/project-v2-3.jpg">
+                                            <i class="flaticon-zoom"></i>
+                                        </a>
+                                    </li>
+                                    <li><a href="#"><span class="flaticon-plus-1"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single project Item-->
+                <!--Start Single project Item-->
+                <div class="col-xl-4 col-lg-6 col-md-6 filter-item commercial industrial residential">
+                    <div class="single-project-item style2">
+                        <div class="img-holder">
+                            <div class="inner">
+                                <img src="assets/images/portfolio/project-v2-4.jpg" alt="Awesome Image">
+                            </div>
+                            <div class="overlay-content text-center">
+                                <p>Commercial</p>
+                                <h3><a href="#">Roof Installation</a></h3>
+                                <div class="border-box"></div>
+                                <ul>
+                                    <li>
+                                        <a class="lightbox-image" data-fancybox="gallery"
+                                           href="assets/images/portfolio/project-v2-4.jpg">
+                                            <i class="flaticon-zoom"></i>
+                                        </a>
+                                    </li>
+                                    <li><a href="#"><span class="flaticon-plus-1"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single project Item-->
+                <!--Start Single project Item-->
+                <div class="col-xl-4 col-lg-6 col-md-6 filter-item industrial">
+                    <div class="single-project-item style2">
+                        <div class="img-holder">
+                            <div class="inner">
+                                <img src="assets/images/portfolio/project-v2-5.jpg" alt="Awesome Image">
+                            </div>
+                            <div class="overlay-content text-center">
+                                <p>Commercial</p>
+                                <h3><a href="#">Roof Installation</a></h3>
+                                <div class="border-box"></div>
+                                <ul>
+                                    <li>
+                                        <a class="lightbox-image" data-fancybox="gallery"
+                                           href="assets/images/portfolio/project-v2-5.jpg">
+                                            <i class="flaticon-zoom"></i>
+                                        </a>
+                                    </li>
+                                    <li><a href="#"><span class="flaticon-plus-1"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single project Item-->
+                <!--Start Single project Item-->
+                <div class="col-xl-4 col-lg-6 col-md-6 filter-item commercial industrial residential">
+                    <div class="single-project-item style2">
+                        <div class="img-holder">
+                            <div class="inner">
+                                <img src="assets/images/portfolio/project-v2-6.jpg" alt="Awesome Image">
+                            </div>
+                            <div class="overlay-content text-center">
+                                <p>Commercial</p>
+                                <h3><a href="#">Roof Installation</a></h3>
+                                <div class="border-box"></div>
+                                <ul>
+                                    <li>
+                                        <a class="lightbox-image" data-fancybox="gallery"
+                                           href="assets/images/portfolio/project-v2-6.jpg">
+                                            <i class="flaticon-zoom"></i>
+                                        </a>
+                                    </li>
+                                    <li><a href="#"><span class="flaticon-plus-1"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single project Item-->
+            </div>
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="project-style2-btn-box">
+                        <a class="btn-one" href="projects.html">
+                            <span class="txt">Load More</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--End Project Style2 Area-->
+
+    <!--Start Testimonials Style2 area-->
+    <section class="testimonials-style2-area">
+        <div class="container">
+            <div class="sec-title center text-center">
+                <div class="sub-title">
+                    <h6><span class="border-left"></span> Testimonials <span class="border-right"></span></h6>
+                </div>
+                <h2>Words From Our Customer</h2>
+            </div>
+
+            <div class="row">
+                <!--Start Single Testimonials Style2-->
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                    <div class="single-testimonials-style2 text-center">
+                        <div class="icon-box">
+                            <span class="flaticon-quote-3"></span>
+                        </div>
+                        <div class="text-holder">
+                            <h3>Better Than Expected</h3>
+                            <p>Rufers service team is very prompt, courteous and professional. They are
+                                committed to doing a quality job & the service.</p>
+                        </div>
+                        <div class="img-holder">
+                            <div class="img-box">
+                                <img src="assets/images/testimonial/testimonial-v2-1.jpg" alt="" />
+                            </div>
+                            <div class="inner">
+                                <h3>Nathan Felix</h3>
+                                <span>CEO, High Rise Construction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single Testimonials Style2-->
+                <!--Start Single Testimonials Style2-->
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                    <div class="single-testimonials-style2 text-center">
+                        <div class="icon-box">
+                            <span class="flaticon-quote-3"></span>
+                        </div>
+                        <div class="text-holder">
+                            <h3>Excellent Company</h3>
+                            <p>Thank you for all of your support. All of you love & forse being you. I cried tears
+                                been a blessing in my life for all of your you love & forse.</p>
+                        </div>
+                        <div class="img-holder">
+                            <div class="img-box">
+                                <img src="assets/images/testimonial/testimonial-v2-2.jpg" alt="" />
+                            </div>
+                            <div class="inner">
+                                <h3>Lamont Shaun</h3>
+                                <span>Regional Manager, XL Park</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single Testimonials Style2-->
+                <!--Start Single Testimonials Style2-->
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+                    <div class="single-testimonials-style2 text-center">
+                        <div class="icon-box">
+                            <span class="flaticon-quote-3"></span>
+                        </div>
+                        <div class="text-holder">
+                            <h3>Professional Team</h3>
+                            <p>I have the pleasure of dealing with envolve team for the past one plus years. The
+                                team has been efficient, very knowledgeable.</p>
+                        </div>
+                        <div class="img-holder">
+                            <div class="img-box">
+                                <img src="assets/images/testimonial/testimonial-v2-3.jpg" alt="" />
+                            </div>
+                            <div class="inner">
+                                <h3>Xavior Vincent</h3>
+                                <span>Green Valley International</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single Testimonials Style2-->
+            </div>
+        </div>
+    </section>
+    <!--End Testimonials Style2 area -->
+
+    <!--Start Partner Area-->
+    <section class="partner-area">
+        <div class="container">
+            <ul class="partner-box partner-carousel owl-carousel owl-theme owl-dot-style1">
+                <!--Start Single Partner Logo Box-->
+                <li class="single-partner-logo-box">
+                    <a href="#"><img src="assets/images/brand/brand-logo-1.png" alt="Awesome Image"></a>
+                </li>
+                <!--End Single Partner Logo Box-->
+                <!--Start Single Partner Logo Box-->
+                <li class="single-partner-logo-box">
+                    <a href="#"><img src="assets/images/brand/brand-logo-2.png" alt="Awesome Image"></a>
+                </li>
+                <!--End Single Partner Logo Box-->
+                <!--Start Single Partner Logo Box-->
+                <li class="single-partner-logo-box">
+                    <a href="#"><img src="assets/images/brand/brand-logo-3.png" alt="Awesome Image"></a>
+                </li>
+                <!--End Single Partner Logo Box-->
+                <!--Start Single Partner Logo Box-->
+                <li class="single-partner-logo-box">
+                    <a href="#"><img src="assets/images/brand/brand-logo-4.png" alt="Awesome Image"></a>
+                </li>
+                <!--End Single Partner Logo Box-->
+                <!--Start Single Partner Logo Box-->
+                <li class="single-partner-logo-box">
+                    <a href="#"><img src="assets/images/brand/brand-logo-5.png" alt="Awesome Image"></a>
+                </li>
+                <!--End Single Partner Logo Box-->
+
+            </ul>
+        </div>
+    </section>
+    <!--End Partner Area-->
+
+
+    <!--Start pricing plan area-->
+    <section class="pricing-plan-area">
+        <div class="container">
+            <div class="sec-title center text-center">
+                <div class="sub-title">
+                    <h6><span class="border-left"></span> Pricing & Plans <span class="border-right"></span></h6>
+                </div>
+                <h2>Our Ideal Roofing Plans</h2>
+            </div>
+            <div class="row">
+
+                <!--Start single price box-->
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                    <div class="single-price-box">
+                        <div class="table-header text-center">
+                            <div class="dot-left zoominout"></div>
+                            <div class="dot-right zoominout-2"></div>
+                            <h3>Basic</h3>
+                        </div>
+                        <div class="table-content">
+                            <div class="package text-center">
+                                <div class="package-bg"
+                                     style="background-image: url(assets/images/shape/pricing-table-bg.png);"></div>
+                                <h2>49</h2>
+                                <span>Dollar Per Sq.ft</span>
+                            </div>
+                            <div class="price-list">
+                                <ul>
+                                    <li>Free Installation</li>
+                                    <li>Inspection: <span>2 Yrs Once</span></li>
+                                    <li><span>5 Years</span> Warranty</li>
+                                    <li class="gray">Emergency Roof Repair</li>
+                                    <li class="gray">Roof Replacement</li>
+                                </ul>
+                            </div>
+                            <div class="table-footer text-center">
+                                <a class="btn-one" href="#">
+                                    <span class="txt">Choose</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End single price box-->
+                <!--Start single price box-->
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                    <div class="single-price-box style2">
+                        <div class="table-header text-center">
+                            <div class="dot-left zoominout"></div>
+                            <div class="dot-right zoominout-2"></div>
+                            <h3>Standard</h3>
+                        </div>
+                        <div class="table-content">
+                            <div class="package text-center">
+                                <h2>79</h2>
+                                <span>Dollar Per Sq.ft</span>
+                            </div>
+                            <div class="price-list">
+                                <ul>
+                                    <li>Free Installation</li>
+                                    <li>Inspection: <span>Once Per Yr</span></li>
+                                    <li><span>8 Years</span> Warranty</li>
+                                    <li>Emergency Roof Repair</li>
+                                    <li class="gray">Roof Replacement</li>
+                                </ul>
+                            </div>
+                            <div class="table-footer text-center">
+                                <a class="btn-one" href="#">
+                                    <span class="txt">Choose</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End single price box-->
+                <!--Start single price box-->
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                    <div class="single-price-box style3">
+                        <div class="table-header text-center">
+                            <div class="dot-left zoominout"></div>
+                            <div class="dot-right zoominout-2"></div>
+                            <h3>Premium</h3>
+                        </div>
+                        <div class="table-content">
+                            <div class="package text-center">
+                                <h2>99</h2>
+                                <span>Dollar Per Sq.ft</span>
+                            </div>
+                            <div class="price-list">
+                                <ul>
+                                    <li>Free Installation</li>
+                                    <li>Inspection: <span>6 Mths Once</span></li>
+                                    <li><span>10 Years</span> Warranty</li>
+                                    <li>Emergency Roof Repair</li>
+                                    <li>Roof Replacement</li>
+                                </ul>
+                            </div>
+                            <div class="table-footer text-center">
+                                <a class="btn-one" href="#">
+                                    <span class="txt">Choose</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End single price box-->
+                <!--Start single price box-->
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                    <div class="single-price-box">
+                        <div class="table-header text-center">
+                            <div class="dot-left zoominout"></div>
+                            <div class="dot-right zoominout-2"></div>
+                            <h3>Advanced</h3>
+                        </div>
+                        <div class="table-content">
+                            <div class="package text-center">
+                                <div class="package-bg"
+                                     style="background-image: url(assets/images/shape/pricing-table-bg.png);"></div>
+                                <h2>129</h2>
+                                <span>Dollar Per Sq.ft</span>
+                            </div>
+                            <div class="price-list">
+                                <ul>
+                                    <li>Free Installation</li>
+                                    <li>Inspection: <span>3 Mths Once</span></li>
+                                    <li><span>15 Years</span> Warranty</li>
+                                    <li>Emergency Roof Repair</li>
+                                    <li>Roof Replacement</li>
+                                </ul>
+                            </div>
+                            <div class="table-footer text-center">
+                                <a class="btn-one" href="#">
+                                    <span class="txt">Choose</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End single price box-->
+
+            </div>
+        </div>
+    </section>
+    <!--End pricing plan area-->
+
+    <!--Start Contact Style1 Area-->
+    <section class="contact-style1-area">
+        <div class="auto-container">
+            <div class="contact-style1_inner">
+                <div class="contact-style1_inner-bg"
+                     style="background-image: url(assets/images/resources/contact-style1_inner-bg.jpg);"></div>
+                <div class="base-bg"></div>
+
+                <div class="people2 wow slideInRight" data-wow-delay="300ms" data-wow-duration="5500ms">
+                    <img class="paroller-2" src="assets/images/resources/people-2.png" alt="">
+                </div>
+                <div class="people1 wow slideInRight" data-wow-delay="300ms" data-wow-duration="3500ms">
+                    <img class="paroller-2" src="assets/images/resources/people-1.png" alt="">
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-5">
+                            <div class="contact-form-box1">
+                                <div class="sec-title">
+                                    <div class="sub-title">
+                                        <h6><span class="border-left"></span>Get in Touch</h6>
+                                    </div>
+                                    <h2>Get a Call Back</h2>
+                                </div>
+                                <form id="contact-form" name="contact_form" class="default-form1" action="#"
+                                      method="post">
+                                    <div class="row">
+                                        <div class="col-xl-6">
+                                            <div class="input-box">
+                                                <input type="text" name="form_name" value="" placeholder="Your Name"
+                                                       required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="input-box">
+                                                <input type="text" name="form_phone" value="" placeholder="Phone"
+                                                       required="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="input-box">
+                                                <div class="select-box">
+                                                    <div class="round-shape"></div>
+                                                    <select class="wide">
+                                                        <option data-display="Service You Need">Service You Need
+                                                        </option>
+                                                        <option value="1">Single Ply Roofing</option>
+                                                        <option value="2">Modified Roofing</option>
+                                                        <option value="3">Built-Up Roofing</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="button-box">
+                                                <button class="btn-one" type="submit"
+                                                        data-loading-text="Please wait...">
+                                                    <span class="txt">Send Request</span>
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Contact Style1 Area-->
+
+    <!--Start Blog Style2 Area-->
+    <section class="blog-style2-area">
+        <div class="container">
+            <div class="sec-title center text-center">
+                <div class="sub-title">
+                    <h6><span class="border-left"></span>News & Updates</h6>
+                </div>
+                <h2>Latest From Blog Post</h2>
+            </div>
+
+            <div class="row text-right-rtl">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="theme_carousel blog-style2-carousel owl-dot-style1 owl-theme owl-carousel"
+                         data-options='{"loop": true, "margin": 30, "autoheight":true, "lazyload":true, "nav": false, "dots": true, "autoplay": true, "autoplayTimeout": 5000, "smartSpeed": 500, "responsive":{ "0" :{ "items": "1" }, "600" :{ "items" : "1" }, "768" :{ "items" : "1" } , "992":{ "items" : "2" }, "1200":{ "items" : "3" }}}'>
+
+                        <!--Start Single blog Style2-->
+                        <div class="single-blog-style1 single-blog-style2 wow fadeInUp" data-wow-delay="100ms"
+                             data-wow-duration="1500ms">
+                            <div class="img-holder">
+                                <div class="gradient-bg"></div>
+                                <div class="inner">
+                                    <img src="assets/images/blog/blog-v2-1.jpg" alt="">
+                                </div>
+                                <div class="date-box">
+                                    <h3>20<br><span>Jul</span></h3>
+                                </div>
+                                <div class="overlay-content">
+                                    <h6><span class="flaticon-open-archive"></span>Maintenance</h6>
+                                    <h3 class="blog-title">
+                                        <a href="blog-single.html">Protecting Your Roof From Storm Damage</a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <div class="bottom-box">
+                                    <div class="pattern-bg"
+                                         style="background-image: url(assets/images/pattern/thm-pattern-7.png);">
+                                    </div>
+                                    <div class="left">
+                                        <a class="btn-two" href="blog-single.html">More Details</a>
+                                    </div>
+                                    <div class="right">
+                                        <ul>
+                                            <li><a href="#"><span class="fa fa-heart-o"></span>10</a></li>
+                                            <li><a href="#"><span class="fa fa-share-alt share"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single blog Style2-->
+                        <!--Start Single blog Style2-->
+                        <div class="single-blog-style1 single-blog-style2 wow fadeInUp" data-wow-delay="100ms"
+                             data-wow-duration="1500ms">
+                            <div class="img-holder">
+                                <div class="gradient-bg"></div>
+                                <div class="inner">
+                                    <img src="assets/images/blog/blog-v2-2.jpg" alt="">
+                                </div>
+                                <div class="date-box">
+                                    <h3>10<br><span>Jul</span></h3>
+                                </div>
+                                <div class="overlay-content">
+                                    <h6><span class="flaticon-open-archive"></span>Tips & Tricks</h6>
+                                    <h3 class="blog-title">
+                                        <a href="blog-single.html">How To Weather Proof Your Roof This Winter</a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <div class="bottom-box">
+                                    <div class="pattern-bg"
+                                         style="background-image: url(assets/images/pattern/thm-pattern-7.png);">
+                                    </div>
+                                    <div class="left">
+                                        <a class="btn-two" href="blog-single.html">More Details</a>
+                                    </div>
+                                    <div class="right">
+                                        <ul>
+                                            <li><a href="#"><span class="fa fa-heart-o"></span>10</a></li>
+                                            <li><a href="#"><span class="fa fa-share-alt share"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single blog Style2-->
+                        <!--Start Single blog Style2-->
+                        <div class="single-blog-style1 single-blog-style2 wow fadeInUp" data-wow-delay="100ms"
+                             data-wow-duration="1500ms">
+                            <div class="img-holder">
+                                <div class="gradient-bg"></div>
+                                <div class="inner">
+                                    <img src="assets/images/blog/blog-v2-3.jpg" alt="">
+                                </div>
+                                <div class="date-box">
+                                    <h3>30<br><span>Jun</span></h3>
+                                </div>
+                                <div class="overlay-content">
+                                    <h6><span class="flaticon-open-archive"></span>Roof Leaks</h6>
+                                    <h3 class="blog-title">
+                                        <a href="blog-single.html">The 5 Most Common Causes Of Roof Leaks</a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <div class="bottom-box">
+                                    <div class="pattern-bg"
+                                         style="background-image: url(assets/images/pattern/thm-pattern-7.png);">
+                                    </div>
+                                    <div class="left">
+                                        <a class="btn-two" href="blog-single.html">More Details</a>
+                                    </div>
+                                    <div class="right">
+                                        <ul>
+                                            <li><a href="#"><span class="fa fa-heart-o"></span>10</a></li>
+                                            <li><a href="#"><span class="fa fa-share-alt share"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single blog Style2-->
+
+                        <!--Start Single blog Style2-->
+                        <div class="single-blog-style1 single-blog-style2 wow fadeInUp" data-wow-delay="100ms"
+                             data-wow-duration="1500ms">
+                            <div class="img-holder">
+                                <div class="gradient-bg"></div>
+                                <div class="inner">
+                                    <img src="assets/images/blog/blog-v2-1.jpg" alt="">
+                                </div>
+                                <div class="date-box">
+                                    <h3>20<br><span>Jul</span></h3>
+                                </div>
+                                <div class="overlay-content">
+                                    <h6><span class="flaticon-open-archive"></span>Maintenance</h6>
+                                    <h3 class="blog-title">
+                                        <a href="blog-single.html">Protecting Your Roof From Storm Damage</a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <div class="bottom-box">
+                                    <div class="pattern-bg"
+                                         style="background-image: url(assets/images/pattern/thm-pattern-7.png);">
+                                    </div>
+                                    <div class="left">
+                                        <a class="btn-two" href="blog-single.html">More Details</a>
+                                    </div>
+                                    <div class="right">
+                                        <ul>
+                                            <li><a href="#"><span class="fa fa-heart-o"></span>10</a></li>
+                                            <li><a href="#"><span class="fa fa-share-alt share"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single blog Style2-->
+                        <!--Start Single blog Style2-->
+                        <div class="single-blog-style1 single-blog-style2 wow fadeInUp" data-wow-delay="100ms"
+                             data-wow-duration="1500ms">
+                            <div class="img-holder">
+                                <div class="gradient-bg"></div>
+                                <div class="inner">
+                                    <img src="assets/images/blog/blog-v2-2.jpg" alt="">
+                                </div>
+                                <div class="date-box">
+                                    <h3>10<br><span>Jul</span></h3>
+                                </div>
+                                <div class="overlay-content">
+                                    <h6><span class="flaticon-open-archive"></span>Tips & Tricks</h6>
+                                    <h3 class="blog-title">
+                                        <a href="blog-single.html">How To Weather Proof Your Roof This Winter</a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <div class="bottom-box">
+                                    <div class="pattern-bg"
+                                         style="background-image: url(assets/images/pattern/thm-pattern-7.png);">
+                                    </div>
+                                    <div class="left">
+                                        <a class="btn-two" href="blog-single.html">More Details</a>
+                                    </div>
+                                    <div class="right">
+                                        <ul>
+                                            <li><a href="#"><span class="fa fa-heart-o"></span>10</a></li>
+                                            <li><a href="#"><span class="fa fa-share-alt share"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single blog Style2-->
+                        <!--Start Single blog Style2-->
+                        <div class="single-blog-style1 single-blog-style2 wow fadeInUp" data-wow-delay="100ms"
+                             data-wow-duration="1500ms">
+                            <div class="img-holder">
+                                <div class="gradient-bg"></div>
+                                <div class="inner">
+                                    <img src="assets/images/blog/blog-v2-3.jpg" alt="">
+                                </div>
+                                <div class="date-box">
+                                    <h3>30<br><span>Jun</span></h3>
+                                </div>
+                                <div class="overlay-content">
+                                    <h6><span class="flaticon-open-archive"></span>Roof Leaks</h6>
+                                    <h3 class="blog-title">
+                                        <a href="blog-single.html">The 5 Most Common Causes Of Roof Leaks</a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <div class="bottom-box">
+                                    <div class="pattern-bg"
+                                         style="background-image: url(assets/images/pattern/thm-pattern-7.png);">
+                                    </div>
+                                    <div class="left">
+                                        <a class="btn-two" href="blog-single.html">More Details</a>
+                                    </div>
+                                    <div class="right">
+                                        <ul>
+                                            <li><a href="#"><span class="fa fa-heart-o"></span>10</a></li>
+                                            <li><a href="#"><span class="fa fa-share-alt share"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single blog Style2-->
+
+                        <!--Start Single blog Style2-->
+                        <div class="single-blog-style1 single-blog-style2 wow fadeInUp" data-wow-delay="100ms"
+                             data-wow-duration="1500ms">
+                            <div class="img-holder">
+                                <div class="gradient-bg"></div>
+                                <div class="inner">
+                                    <img src="assets/images/blog/blog-v2-1.jpg" alt="">
+                                </div>
+                                <div class="date-box">
+                                    <h3>20<br><span>Jul</span></h3>
+                                </div>
+                                <div class="overlay-content">
+                                    <h6><span class="flaticon-open-archive"></span>Maintenance</h6>
+                                    <h3 class="blog-title">
+                                        <a href="blog-single.html">Protecting Your Roof From Storm Damage</a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <div class="bottom-box">
+                                    <div class="pattern-bg"
+                                         style="background-image: url(assets/images/pattern/thm-pattern-7.png);">
+                                    </div>
+                                    <div class="left">
+                                        <a class="btn-two" href="blog-single.html">More Details</a>
+                                    </div>
+                                    <div class="right">
+                                        <ul>
+                                            <li><a href="#"><span class="fa fa-heart-o"></span>10</a></li>
+                                            <li><a href="#"><span class="fa fa-share-alt share"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single blog Style2-->
+                        <!--Start Single blog Style2-->
+                        <div class="single-blog-style1 single-blog-style2 wow fadeInUp" data-wow-delay="100ms"
+                             data-wow-duration="1500ms">
+                            <div class="img-holder">
+                                <div class="gradient-bg"></div>
+                                <div class="inner">
+                                    <img src="assets/images/blog/blog-v2-2.jpg" alt="">
+                                </div>
+                                <div class="date-box">
+                                    <h3>10<br><span>Jul</span></h3>
+                                </div>
+                                <div class="overlay-content">
+                                    <h6><span class="flaticon-open-archive"></span>Tips & Tricks</h6>
+                                    <h3 class="blog-title">
+                                        <a href="blog-single.html">How To Weather Proof Your Roof This Winter</a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <div class="bottom-box">
+                                    <div class="pattern-bg"
+                                         style="background-image: url(assets/images/pattern/thm-pattern-7.png);">
+                                    </div>
+                                    <div class="left">
+                                        <a class="btn-two" href="blog-single.html">More Details</a>
+                                    </div>
+                                    <div class="right">
+                                        <ul>
+                                            <li><a href="#"><span class="fa fa-heart-o"></span>10</a></li>
+                                            <li><a href="#"><span class="fa fa-share-alt share"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single blog Style2-->
+                        <!--Start Single blog Style2-->
+                        <div class="single-blog-style1 single-blog-style2 wow fadeInUp" data-wow-delay="100ms"
+                             data-wow-duration="1500ms">
+                            <div class="img-holder">
+                                <div class="gradient-bg"></div>
+                                <div class="inner">
+                                    <img src="assets/images/blog/blog-v2-3.jpg" alt="">
+                                </div>
+                                <div class="date-box">
+                                    <h3>30<br><span>Jun</span></h3>
+                                </div>
+                                <div class="overlay-content">
+                                    <h6><span class="flaticon-open-archive"></span>Roof Leaks</h6>
+                                    <h3 class="blog-title">
+                                        <a href="blog-single.html">The 5 Most Common Causes Of Roof Leaks</a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="text-holder">
+                                <div class="bottom-box">
+                                    <div class="pattern-bg"
+                                         style="background-image: url(assets/images/pattern/thm-pattern-7.png);">
+                                    </div>
+                                    <div class="left">
+                                        <a class="btn-two" href="blog-single.html">More Details</a>
+                                    </div>
+                                    <div class="right">
+                                        <ul>
+                                            <li><a href="#"><span class="fa fa-heart-o"></span>10</a></li>
+                                            <li><a href="#"><span class="fa fa-share-alt share"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Single blog Style2-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Blog Style2 Area-->
+
+    <!--Start footer area -->
+    <footer class="footer-area footer-area--style2">
+
+        <!--Start Footer-->
+        <div class="footer footer--style2">
+            <div class="container">
+                <div class="row text-right-rtl">
+
+                    <!--Start single footer widget-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.1s">
+                        <div class="single-footer-widget single-footer-widget-style2 marbtm50">
+                            <div class="our-company-info">
+                                <div class="footer-logo">
+                                    <a href="index.html"><img src="assets/images/footer/footer-logo.png" alt=""></a>
+                                </div>
+                                <div class="text-box">
+                                    <p>Roofit Roofing & Retro-Fit is a family owned, operated business serving the
+                                        greater Los Angeles area since 2000.</p>
+                                </div>
+                                <div class="emergency-contact">
+                                    <h6>Emergency? Call Us now at</h6>
+                                    <h3><span class="flaticon-headphone"></span><a
+                                            href="tel:123456789">+1800-12-3456</a></h3>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single footer widget-->
+
+                    <!--Start single footer widget-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.3s">
+                        <div class="single-footer-widget marbtm50">
+                            <div class="title">
+                                <h3>Services</h3>
+                            </div>
+                            <div class="footer-widget-links-2">
+                                <ul>
+                                    <li><a href="#">Single Ply Roofing</a></li>
+                                    <li><a href="#">Modified Roofing</a></li>
+                                    <li><a href="#">Built-Up Roofing</a></li>
+                                    <li><a href="#">Metal Roofing</a></li>
+                                    <li><a href="#">Vegetative Roofing</a></li>
+                                    <li><a href="#">Specialty Metal</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single footer widget-->
+
+                    <!--Start single footer widget-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.5s">
+                        <div class="single-footer-widget">
+                            <div class="title">
+                                <h3>Useful Links</h3>
+                            </div>
+                            <div class="footer-widget-links-2">
+                                <ul>
+                                    <li><a href="#">About Company</a></li>
+                                    <li><a href="#">Work Gallery</a></li>
+                                    <li><a href="#">Client Feedback</a></li>
+                                    <li><a href="#">Local Offices</a></li>
+                                    <li><a href="#">Make Appointment</a></li>
+                                    <li><a href="#">News & Updates</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single footer widget-->
+
+                    <!--Start single footer widget-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.7s">
+                        <div class="single-footer-widget pdtop50">
+                            <div class="title">
+                                <h3>Newsletter</h3>
+                            </div>
+                            <div class="footer-subscribe-box">
+                                <div class="text">
+                                    <p>Subscribe us & get news, articles to your inbox.</p>
+                                </div>
+                                <form class="subscribe-form" action="#">
+                                    <div class="input-box">
+                                        <input type="email" name="email" placeholder="Email address">
+                                        <div class="icon">
+                                            <span class="flaticon-envelope"></span>
+                                        </div>
+                                    </div>
+                                    <button class="btn-one" type="submit">
+                                        <span class="txt">Subscribe Us</span>
+                                    </button>
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--End single footer widget-->
+
+                </div>
+            </div>
+        </div>
+        <!--End Footer-->
+
+        <div class="footer-bottom footer-bottom--style2">
+            <div class="container">
+                <div class="bottom-inner">
+                    <div class="copyright">
+                        <p>Copyright &copy; 2021<a href="index.html"> Rufers.</a> All Rights Reserved.</p>
+                    </div>
+                    <div class="footer-menu">
+                        <ul class="footer-nav">
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!--End footer area-->
+
+
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <span class="flaticon-up-arrow"></span>
+    </button>
+
+
+
+    <!-- search-popup -->
+    <div id="search-popup" class="search-popup">
+        <div class="close-search"><i class="icon-close"></i></div>
+        <div class="popup-inner">
+            <div class="overlay-layer"></div>
+            <div class="search-form">
+                <form method="post" action="https://mehedi.asiandevelopers.com/demo/rufers/index.html">
+                    <div class="form-group">
+                        <fieldset>
+                            <input type="search" class="form-control" name="search-input" value=""
+                                   placeholder="Search Here" required>
+                            <input type="submit" value="Search Now!" class="theme-btn style-four">
+                        </fieldset>
+                    </div>
+                </form>
+                <h3>Recent Search Keywords</h3>
+                <ul class="recent-searches">
+                    <li><a href="index.html">Safety Tips</a></li>
+                    <li><a href="index.html">Filteration</a></li>
+                    <li><a href="index.html">Accessories</a></li>
+                    <li><a href="index.html">Tools</a></li>
+                    <li><a href="index.html">Design</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- search-popup end -->
+
+
+</div>
+
+
+
+
+
+
+<script src="{{ asset("assets/js/jquery.js") }}"></script>
+<script src="{{ asset("assets/js/aos.js") }}"></script>
+<script src="{{ asset("assets/js/appear.js") }}"></script>
+<script src="{{ asset("assets/js/bootstrap.bundle.min.js") }}"></script>
+<script src="{{ asset("assets/js/bootstrap-select.min.js") }}"></script>
+<script src="{{ asset("assets/js/isotope.js") }}"></script>
+<script src="{{ asset("assets/js/jquery.countTo.js") }}"></script>
+<script src="{{ asset("assets/js/jquery.easing.min.js") }}"></script>
+<script src="{{ asset("assets/js/jquery.enllax.min.js") }}"></script>
+<script src="{{ asset("assets/js/jquery.fancybox.js") }}"></script>
+<script src="{{ asset("assets/js/jquery.magnific-popup.min.js") }}"></script>
+<script src="{{ asset("assets/js/jquery.paroller.min.js") }}"></script>
+<script src="{{ asset("assets/js/jquery-ui.js") }}"></script>
+<script src="{{ asset("assets/js/knob.js") }}"></script>
+<script src="{{ asset("assets/js/map-script.js") }}"></script>
+<script src="{{ asset("assets/js/owl.js") }}"></script>
+<script src="{{ asset("assets/js/pagenav.js") }}"></script>
+<script src="{{ asset("assets/js/parallax.min.js") }}"></script>
+<script src="{{ asset("assets/js/scrollbar.js") }}"></script>
+<script src="{{ asset("assets/js/TweenMax.min.js") }}"></script>
+<script src="{{ asset("assets/js/validation.js") }}"></script>
+<script src="{{ asset("assets/js/wow.js") }}"></script>
+<script src="{{ asset("assets/js/color-switcher.min.js") }}"></script>
+
+<script src="{{ asset("assets/js/jquery.bootstrap-touchspin.js") }}"></script>
+<script src="{{ asset("assets/js/jquery.nice-select.min.js") }}"></script>
+<script src="{{ asset("assets/js/tilt.jquery.js") }}"></script>
+
+
+
+<!-- thm custom script -->
+<script src="{{ asset("assets/js/custom.js") }}"></script>
+
+
+
+</body>
 </html>

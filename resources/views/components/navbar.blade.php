@@ -2,8 +2,8 @@
 $user = auth()->user();
 @endphp
 
-<div class="navbar-bg"></div>
-<nav class="navbar navbar-expand-lg main-navbar">
+<div class="navbar-bg bg-gradient-to-r from-indigo-800 from-40%  via-red-500 to-red-700"></div>
+<nav class="navbar navbar-expand-lg main-navbar ">
     <form class="form-inline mr-auto">
         <ul class="navbar-nav mr-3">
             <li><a href="#" data-turbolinks="false" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
@@ -19,7 +19,7 @@ $user = auth()->user();
             @endif
             <div class="dropdown-menu dropdown-menu-right">
                 <a href="/user/profile" class="dropdown-item has-icon">
-                    <i class="far fa-user"></i> Profile
+                    <i class="far fa-user"></i> Profil
                 </a>
                 @if (request()->get('is_admin'))
                 <a href="/setting" class="dropdown-item has-icon">
@@ -31,7 +31,7 @@ $user = auth()->user();
                     @csrf
 
                     <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger" onclick="event.preventDefault();this.closest('form').submit();">
-                        <i class="fas fa-sign-out-alt"></i> Logout
+                        <i class="fas fa-sign-out-alt"></i> Déconnexion
                     </a>
                 </form>
             </div>

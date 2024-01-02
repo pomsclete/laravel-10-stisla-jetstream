@@ -34,9 +34,33 @@ if (!function_exists('create_button')) {
         $action = str_replace($model, "", $action);
 
         return [
-            'submit_text' => ($action == "update") ? "Update" : "Submit",
-            'submit_response' => ($action == "update") ? "Updated." : "Submited.",
-            'submit_response_notyf' => ($action == "update") ? "Data ".$model." updated successfully" : "Data ".$model." added successfully"
+            'submit_text' => ($action == "update") ? "Mettre à jour" : "Enregistrer",
+            'submit_response' => ($action == "update") ? "Mis à jour." : "Sauvegardé.",
+            'submit_response_notyf' => ($action == "update") ? "Données ".$model." mis à jour avec succès" : "Data ".$model." sauvegardées avec succés"
         ];
+    }
+
+
+    if (!function_exists('base64url_encode')) {
+
+        function base64url_encode($data)
+        {
+            $b64 = base64_encode($data);
+
+            if ($b64 === false) {
+                return false;
+            }
+            $url = strtr($b64, '+/', '-_');
+            return rtrim($url, '=');
+        }
+    }
+
+    if (!function_exists('base64url_decode')) {
+
+        function base64url_decode($data, $strict = false)
+        {
+           $b64 = strtr($data, '-_', '+/');
+            return base64_decode($b64, $strict);
+        }
     }
 }

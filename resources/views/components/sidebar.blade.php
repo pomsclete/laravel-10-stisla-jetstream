@@ -3,19 +3,72 @@ $links = [
     [
         "href" => "dashboard",
         "text" => "Dashboard",
+        "icon" => "fa-fire",
         "is_multi" => false,
+    ],
+     [
+        "href" => [
+            [
+                "section_text" => "Informations",
+                "icon" => "fa-newspaper",
+                "section_list" => [
+                    ["href" => "information.actu", "text" => "Actualités"],
+                    ["href" => "information.tag", "text" => "Tags actualité"],
+                    ["href" => "information.slide", "text" => "Slides accueil"],
+                    ["href" => "information.accre", "text" => "Accréditations"],
+                    ["href" => "information.agenda", "text" => "Agendas"],
+                    ["href" => "user.new", "text" => "Témoignages"],
+                    ["href" => "information.partenariat", "text" => "Partenariats"],
+                ]
+            ]
+        ],
+        "text" => "News",
+        "is_multi" => true,
     ],
     [
         "href" => [
             [
-                "section_text" => "User",
+                "section_text" => "Rencontres",
+                "icon" => "fa-restroom",
                 "section_list" => [
-                    ["href" => "user", "text" => "Data User"],
-                    ["href" => "user.new", "text" => "Buat User"]
+                    ["href" => "rencontre.journe", "text" => "Portes ouvertes"],
                 ]
             ]
         ],
-        "text" => "User",
+        "text" => "Actions",
+        "is_multi" => true,
+    ],
+    [
+        "href" => [
+            [
+                "section_text" => "Candidatures",
+                "icon" => "fa-cogs",
+                "section_list" => [
+                    ["href" => "user", "text" => "Nouveaux dossiers"],
+                    ["href" => "user", "text" => "En cours de traitement"],
+                    ["href" => "user", "text" => "Dossiers Rejetés"],
+                    ["href" => "user", "text" => "Dossier Validées"],
+                ]
+            ]
+        ],
+        "text" => "Dossiers",
+        "is_multi" => true,
+    ],
+    [
+        "href" => [
+            [
+                "section_text" => "Paramétrage",
+                "icon" => "fa-cogs",
+                "section_list" => [
+                    ["href" => "parametrage.campus", "text" => "Nos campus"],
+                    ["href" => "parametrage.type", "text" => "Type d'actualités"],
+                    ["href" => "parametrage.annee", "text" => "Années Académiques"],
+                    ["href" => "parametrage.level", "text" => "Niveaux | Classes"],
+                    ["href" => "user", "text" => "Utilisateurs"],
+                ]
+            ]
+        ],
+        "text" => "Configuration",
         "is_multi" => true,
     ],
 ];
@@ -34,10 +87,12 @@ $navigation_links = array_to_object($links);
         </div>
         @foreach ($navigation_links as $link)
         <ul class="sidebar-menu">
-            <li class="menu-header">{{ $link->text }}</li>
+            @if($link->text != "")
+            <li class="menu-header">{{ __($link->text) }}</li>
+            @endif
             @if (!$link->is_multi)
             <li class="{{ Request::routeIs($link->href) ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route($link->href) }}"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+                <a class="nav-link" href="{{ route($link->href) }}"><i class="fas {{ $link->icon }}"></i><span>Dashboard</span></a>
             </li>
             @else
                 @foreach ($link->href as $section)
@@ -50,7 +105,8 @@ $navigation_links = array_to_object($links);
                     @endphp
 
                     <li class="dropdown {{ ($is_active) ? 'active' : '' }}">
-                        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-chart-bar"></i> <span>{{ $section->section_text }}</span></a>
+                        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                            <i class="fas {{ $section->icon }}"></i> <span>{{ $section->section_text }}</span></a>
                         <ul class="dropdown-menu">
                             @foreach ($section->section_list as $child)
                                 <li class="{{ Request::routeIs($child->href) ? 'active' : '' }}"><a class="nav-link" href="{{ route($child->href) }}">{{ $child->text }}</a></li>
