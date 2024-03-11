@@ -7,10 +7,10 @@
                     "section_text" => "Découvrir l'EPF",
                     "section_list" => [
                         ["href" => "histoire", "text" => "Histoire","is_multi" => false],
-                        ["href" => "user.new", "text" => "Mot du directeur","is_multi" => false],
+                        ["href" => "motDg", "text" => "Mot du directeur","is_multi" => false],
                         ["href" => "blog", "text" => "Actualités","is_multi" => false],
-                        ["href" => "user.new", "text" => "Accréditations et labels","is_multi" => false],
-                        ["href" => "user.new", "text" => "Égalités Femmes Hommes","is_multi" => false],
+                        ["href" => "accreditation", "text" => "Accréditations et labels","is_multi" => false],
+                        ["href" => "engage", "text" => "L'EPF s'engage","is_multi" => false],
                         ["href" => "user.new", "text" => "Nos campus","is_multi"=> true,
                             "sous" => [
                                         "href" => "user.new", "text" => "Paris-Cachan"
@@ -27,9 +27,9 @@
                 [
                     "section_text" => "Admission",
                     "section_list" => [
-                        ["href" => "user", "text" => "Pourquoi choisir l'EPF","is_multi" => false],
-                        ["href" => "user.new", "text" => "Conditions d'admission","is_multi" => false],
-                        ["href" => "blog", "text" => "Formulaire de pré-inscription","is_multi" => false]
+                        ["href" => "dakar", "text" => "Pourquoi choisir l'EPF","is_multi" => false],
+                        ["href" => "pourquoi", "text" => "Conditions d'admission","is_multi" => false],
+                        ["href" => "blog", "text" => "Pré-inscription","is_multi" => false]
                     ]
                 ]
             ],
@@ -41,8 +41,8 @@
                 [
                     "section_text" => "Formations",
                     "section_list" => [
-                        ["href" => "user", "text" => "Bachelor","is_multi" => false],
-                        ["href" => "user.new", "text" => "CPGE","is_multi" => false],
+                        ["href" => "formation.bachelor", "text" => "Bachelor Bac+3","is_multi" => false],
+                        ["href" => "formation.cpge", "text" => "CPGE","is_multi" => false],
                     ]
                 ]
             ],
@@ -158,10 +158,10 @@
                                                                 @else
                                                                 <li class="menu-item-has-children"><a href="#"> {{ __("Nos campus") }}</a>
                                                                     <ul class="sub-menu">
-                                                                        <li><a href="#">Paris-cachan</a></li>
-                                                                        <li><a href="#">Troyes</a></li>
-                                                                        <li><a href="#">Montpellier</a></li>
-                                                                        <li><a href="#">Saint-Nazaire</a></li>
+                                                                        <li><a href="https://www.epf.fr/campus/paris-cachan" target="_blank">Paris-cachan</a></li>
+                                                                        <li><a href="https://www.epf.fr/campus/troyes" target="_blank">Troyes</a></li>
+                                                                        <li><a href="https://www.epf.fr/campus/montpellier" target="_blank">Montpellier</a></li>
+                                                                        <li><a href="https://www.epf.fr/campus/saint-nazaire" target="_blank">Saint-Nazaire</a></li>
                                                                     </ul>
                                                                 </li>
                                                                 @endif
@@ -185,9 +185,7 @@
                             <div class="col-auto">
                                 <div class="header-button">
                                     <button type="button" class="icon-btn style2 searchBoxToggler "><i class="far fa-search"></i></button>
-                                    <a href="#" class="th-btn ml-20">
-                                        Brochure <i class="fas fa-arrow-right ms-1"></i>
-                                    </a>
+                                     <livewire:front.formation.brochure-component  />
                                 </div>
                             </div>
                         </div>

@@ -11,7 +11,7 @@
                     <h1 class="breadcumb-title">{{ (app()->getLocale() == 'fr') ? "Histoire de l'école": "School story" }}</h1>
                     <ul class="breadcumb-menu">
                         <li><a href="{{ route('home',app()->getLocale()) }}">{{ (app()->getLocale() == 'fr') ? "Accueil" : "Home" }}</a></li>
-                        <li><a href="#">{{ (app()->getLocale() == 'fr') ? "Découvrir l'EPF" : "Discover EPF" }}</a> </li>
+                        <li><a href="#">{{ (app()->getLocale() == 'fr') ? "Une école responsable" : "A responsible school" }}</a> </li>
                     </ul>
                 </div>
             </div>

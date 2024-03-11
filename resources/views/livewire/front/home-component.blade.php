@@ -49,8 +49,9 @@
                 <div class="row">
                     <div class="col-xl-4">
                         <div class="title-area mb-25 mb-lg-0 text-xl-start text-center"><span class="sub-title"><i
-                                    class="fal fa-book me-2"></i> Une école responsable</span>
-                            <h2 class="sec-title">Accréditations et labels</h2><a href="" class="th-btn">Consulter<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                                    class="fal fa-book me-2"></i> {{ (app()->getLocale() == 'fr') ? "Une école responsable" : "A responsible school" }}</span>
+                            <h2 class="sec-title">{{ (app()->getLocale() == 'fr') ? "Accréditations et labels" : "Accréditations and labels" }}</h2>
+                            <a href="{{ route('accreditation',[app()->getLocale()]) }}" class="th-btn">{{ (app()->getLocale() == 'fr') ? "Consulter" : "Explore" }}<i class="fa-regular fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                     <div class="col-xl-8">
@@ -78,14 +79,14 @@
             <div class="row align-items-center">
                 <div class="col-xl-6">
                     <div class="img-box1 mb-40 mb-xl-0">
-                        <div class="img1"><img class="tilt-active" src="{{ asset('front/assets/img/normal/about_1_1.png') }}" alt="About">
+                        <div class="img1"><img class="tilt-active" src="{{ asset('front/assets/img/normal/about_1_1.jpg') }}" loading="lazy" alt="EPF Africa">
                         </div>
                         <div class="about-grid" data-bg-src="{{ asset('front/assets/img/normal/about_1_3.png') }}">
                             <h3 class="about-grid_year"><span class="counter-number">35</span>%<!--<span
                                     class="text-theme">+</span>--></h3>
-                            <p class="about-grid_text">de femmes (élèves ingénieurs)</p>
+                            <p class="about-grid_text">{{ (app()->getLocale() == 'fr') ? "de femmes (élèves ingénieurs)" : "of women (engineering students)" }}</p>
                         </div>
-                        <div class="img2"><img class="tilt-active" src="{{ asset('front/assets/img/normal/about_1_2.png') }}" alt="About">
+                        <div class="img2"><img class="tilt-active" src="{{ asset('front/assets/img/normal/about_1_2.jpg') }}" alt="EPF Africa">
                         </div>
                         <div class="shape-mockup about-shape1 jump" data-left="-67px" data-bottom="0"><img
                                 src="{{ asset('front/assets/img/normal/about_1_shape1.png') }}" alt="img"></div>
@@ -105,7 +106,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-auto">
                             <div class="about-grid_img mb-30 mb-md-0">
-                                <img src="{{ asset('front/assets/img/normal/about_1_4.png') }}" alt="img">
+                                <img src="{{ asset('front/assets/img/normal/about_1_4.jpg') }}" alt="img">
                             </div>
                         </div>
                         <div class="col-md-7">
@@ -121,7 +122,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="btn-group mt-40"><a href="#" class="th-btn">En Savoir plus<i
+                    <div class="btn-group mt-40"><a href="{{ route('dakar',[app()->getLocale()]) }}" class="th-btn">En Savoir plus<i
                                 class="fa-regular fa-arrow-right ms-2"></i></a></div>
                 </div>
             </div>
@@ -158,7 +159,7 @@
             <div class="row align-items-center">
                 <div class="col-xl-6">
                     <div class="wcu-img-1">
-                        <div class="img1"><img src="{{ asset('front/assets/img/normal/wcu_1_1.png') }}" alt="img"></div>
+                        <div class="img1"><img src="{{ asset('front/assets/img/normal/wcu_1_1.jpg') }}" alt="img"></div>
 
                         <div class="text-end"><a class="th-btn mt-30" href="#">S'inscrire <i
                                     class="far fa-arrow-right ms-1"></i></a></div>
@@ -166,12 +167,11 @@
                 </div>
                 <div class="col-xl-6">
                     <div class="wcu-wrap1">
-                        <div class="title-area mb-25"><span class="sub-title"><i class="fal fa-book me-2"></i> L'ADMISSION À L'EPF</span>
-                            <h2 class="sec-title">Êtes-vous l'ingénieur·e EPF de demain ?.</h2>
-                            <p class="sec-text mt-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Sed nec nunc sem. Sed nisl justo, ultrices in turpis sed, scelerisque malesuada libero.
-                                Fusce enim lorem, mattis eu risus ac, placerat dignissim justo. Vestibulum ornare arcu
-                                vitae faucibus tincidunt.</p>
+                        <div class="title-area mb-25"><span class="sub-title"><i class="fal fa-book me-2"></i> Campus EPF Dakar</span>
+                            <h2 class="sec-title">Intégrez une grande école d'ingénieurs francaise</h2>
+                            <p class="sec-text mt-20">L'EPF Ecole d'Ingénieur.e.s est une grande école d'ingénieurs généraliste
+                                avec une forte dimension internationale, membre de la conférence des Grandes Ecoles, de l'UGEI et de la CDEFI. <br>
+                            Elle a pour vocation de former des cadres techniques de haut niveau et des ingénieurs généralistes innovants, responsables et de dimension internationale</p>
                         </div>
                         <div class="row gy-4">
                             <div class="col-md-6">
@@ -179,8 +179,6 @@
                                     <div class="wcu-box_icon"><i class="fas fa-1"></i></div>
                                     <div class="wcu-box_details">
                                         <h3 class="box-title">Dépôt de candidature</h3>
-                                        <p class="wcu-box_text">Seamlessly envisioneer tactical data through services.
-                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -189,8 +187,6 @@
                                     <div class="wcu-box_icon"><i class="fas fa-2"></i></div>
                                     <div class="wcu-box_details">
                                         <h3 class="box-title">Etude du dossier</h3>
-                                        <p class="wcu-box_text">Seamlessly envisioneer tactical data through services.
-                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -199,8 +195,6 @@
                                     <div class="wcu-box_icon"><i class="fas fa-3"></i></div>
                                     <div class="wcu-box_details">
                                         <h3 class="box-title">Lettre d'admission</h3>
-                                        <p class="wcu-box_text">Seamlessly envisioneer tactical data through services.
-                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -209,8 +203,6 @@
                                     <div class="wcu-box_icon"><i class="fas fa-4"></i></div>
                                     <div class="wcu-box_details">
                                         <h3 class="box-title">Inscription</h3>
-                                        <p class="wcu-box_text">Seamlessly envisioneer tactical data through services.
-                                        </p>
                                     </div>
                                 </div>
                             </div>

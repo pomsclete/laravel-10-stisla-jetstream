@@ -17,13 +17,32 @@ $links = [
                     ["href" => "information.slide", "text" => "Slides accueil"],
                     ["href" => "information.accre", "text" => "Accréditations"],
                     ["href" => "information.agenda", "text" => "Agendas"],
-                    ["href" => "user.new", "text" => "Témoignages"],
                     ["href" => "information.partenariat", "text" => "Partenariats"],
                 ]
             ]
         ],
         "text" => "News",
         "is_multi" => true,
+    ],
+   [
+        "href" => [
+            [
+                "section_text" => "Formations",
+                "icon" => "fa-graduation-cap",
+                "section_list" => [
+                    ["href" => "formation.add", "text" => "Ajouter une formation"],
+                    ["href" => "formation.liste", "text" => "Liste des formations"]
+                ]
+            ]
+        ],
+        "text" => "Etudes",
+        "is_multi" => true,
+    ],
+      [
+        "href" => "brochure",
+        "text" => "Brochures télechargées",
+        "icon" => "fa-download",
+        "is_multi" => false,
     ],
     [
         "href" => [
@@ -38,22 +57,7 @@ $links = [
         "text" => "Actions",
         "is_multi" => true,
     ],
-    [
-        "href" => [
-            [
-                "section_text" => "Candidatures",
-                "icon" => "fa-cogs",
-                "section_list" => [
-                    ["href" => "user", "text" => "Nouveaux dossiers"],
-                    ["href" => "user", "text" => "En cours de traitement"],
-                    ["href" => "user", "text" => "Dossiers Rejetés"],
-                    ["href" => "user", "text" => "Dossier Validées"],
-                ]
-            ]
-        ],
-        "text" => "Dossiers",
-        "is_multi" => true,
-    ],
+
     [
         "href" => [
             [
@@ -87,14 +91,15 @@ $navigation_links = array_to_object($links);
         </div>
         @foreach ($navigation_links as $link)
         <ul class="sidebar-menu">
-            @if($link->text != "")
-            <li class="menu-header">{{ __($link->text) }}</li>
-            @endif
+
             @if (!$link->is_multi)
             <li class="{{ Request::routeIs($link->href) ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route($link->href) }}"><i class="fas {{ $link->icon }}"></i><span>Dashboard</span></a>
+                <a class="nav-link" href="{{ route($link->href) }}"><i class="fas {{ $link->icon }}"></i><span>{{ __($link->text) }}</span></a>
             </li>
             @else
+                @if($link->text != "")
+                    <li class="menu-header">{{ __($link->text) }}</li>
+                @endif
                 @foreach ($link->href as $section)
                     @php
                     $routes = collect($section->section_list)->map(function ($child) {

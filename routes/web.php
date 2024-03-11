@@ -44,7 +44,18 @@ Route::group(
     Route::view('/salons-forums', "pages.front.page-forum")->name('forums');
     Route::view('/nos-partenaires', "pages.front.page-partenaire")->name('partenaire');
     Route::view('/histoire', "pages.front.page-histoire")->name('histoire');
+    Route::view('/mot-du-directeur', "pages.front.page-mot-dg")->name('motDg');
+    Route::view('/campus-inclusifs-engages', "pages.front.page-engage")->name('engage');
+    Route::view('/accreditations-et-labels', "pages.front.page-accreditation")->name('accreditation');
+    Route::view('/pourquoi-choisir-epf', "pages.front.page-dakar")->name('dakar');
     Route::view('/nouer-un-partenariat', "pages.front.page-demand-partener")->name('addpartenaire');
+    Route::view('/condition-admission', "pages.front.page-pourquoi")->name('pourquoi');
+    /* Formation front */
+    Route::view('/formation/bachelor', "pages.front.formation.page-bachelor-formation")->name('formation.bachelor');
+    Route::view('/formations', "pages.front.formation.page-formation")->name('formations');
+    Route::view('/formation/{formation?}', "pages.front.formation.page-formation-detail")->name('formation');
+    Route::view('/formation/cours-preparatoires-des-grandes-ecoles', "pages.front.formation.page-cpge")->name('formation.cpge');
+
 
 });
 
@@ -85,6 +96,13 @@ Route::group([ "middleware" => ['auth:sanctum', config('jetstream.auth_session')
     Route::view('/rencontre/journe', "pages.rencontre.page-journe")->name('rencontre.journe');
     Route::view('/rencontre/journe/add', "pages.rencontre.page-add-journe")->name('rencontre.addjourne');
     Route::view('/rencontre/journe/edit/{journe}', "pages.rencontre.page-edit-journe")->name('rencontre.editjourne');
+
+    /** Formation */
+    Route::view('/formation/add', "pages.formation.page-add-formation")->name('formation.add');
+    Route::view('/formation/liste', "pages.formation.page-table-formation")->name('formation.liste');
+    Route::view('/formatioon/edit/{formation}', "pages.formation.page-edit-formation")->name('formation.edit');
+    /* Brochure */
+    Route::view('/brochure', "pages.brochure.page-brochure")->name('brochure');
 
 });
 

@@ -63,4 +63,11 @@ if (!function_exists('create_button')) {
             return base64_decode($b64, $strict);
         }
     }
+
+    if (!function_exists('date_fr')) {
+
+        function date_fr($date){
+            return \Carbon\Carbon::parse($date)->format('d/m/Y');
+        }
+    }
 }

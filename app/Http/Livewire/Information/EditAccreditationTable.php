@@ -35,7 +35,7 @@ class EditAccreditationTable extends Component
             $fichier = $data->logo;
         }else {
             $fichier = $this->logo->hashName();
-            $this->logo->store('actualite','public');
+            $this->logo->store('accreditation','public');
         }
         $is_saved = $data->update([
             'libelle' => $this->libelle_francais,

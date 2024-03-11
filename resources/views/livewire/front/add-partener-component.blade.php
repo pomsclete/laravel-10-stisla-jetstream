@@ -55,7 +55,7 @@
                         <p class="mt-n2 mb-35">
                             {!! __('PartAdd5') !!}
                         </p>
-                        <a href="#partners" class="th-btn">{{ __('PartBtn1') }}<i class="far fa-arrow-right ms-2"></i></a>
+                        <a href="mailto:partnership@epf-africa.com" class="th-btn">{{ __('PartBtn1') }}<i class="far fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
@@ -115,7 +115,7 @@
                     <p class="mb-30">
                         {{ __('PartAdd11') }}
                     </p>
-                    <a href="#partners" class="th-btn">{{ __('PartBtn3') }}<i
+                    <a href="mailto:partnership@epf-africa.com" class="th-btn">{{ __('PartBtn3') }}<i
                             class="fas fa-arrow-right ms-2"></i></a>
                 </div>
             </div>
